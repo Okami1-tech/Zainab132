@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#090b12"><title>The Place Between Two Duas</title>
+<style>
+:root{--bg:#090b12;--ink:#f6f0e8;--muted:#aaa7b3;--gold:#e7c98d;--rose:#d99aaa;--line:rgba(231,201,141,.24)}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 50% 0%,#202033,#0b0d16 55%,#07080d);color:var(--ink);font-family:Georgia,serif;min-height:100vh}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.4;background-image:radial-gradient(1px 1px at 12% 18%,#fff 98%,transparent),radial-gradient(1px 1px at 83% 12%,#e7c98d 98%,transparent),radial-gradient(1px 1px at 68% 61%,#fff 98%,transparent),radial-gradient(1px 1px at 22% 74%,#e7c98d 98%,transparent);background-size:280px 240px}
+.wrap{width:min(760px,92vw);margin:auto;padding:38px 0 65px;position:relative}.top,.sub,.progress,footer,.eyebrow,.node small,.core small,.tiny,.close,.restart{font-family:Arial,sans-serif}
+.top{text-align:center;letter-spacing:.22em;text-transform:uppercase;font-size:10px;color:var(--gold)}
+h1{text-align:center;font-weight:normal;font-size:clamp(38px,8vw,64px);line-height:1.03;margin:22px 0 12px}h1 span{color:var(--rose);font-style:italic}
+.sub{text-align:center;color:var(--muted);font-size:13px;line-height:1.8;max-width:440px;margin:auto}
+.rule{height:1px;background:linear-gradient(90deg,transparent,var(--line),transparent);margin:30px auto;width:72%}
+.intro{text-align:center;font-size:17px;line-height:1.9;color:#ded8d1;max-width:570px;margin:0 auto 28px}.intro em{color:var(--gold)}
+.orbit{width:min(440px,88vw);aspect-ratio:1;margin:10px auto 26px;position:relative;border:1px solid rgba(231,201,141,.16);border-radius:50%;display:grid;place-items:center}
+.orbit:before,.orbit:after{content:"";position:absolute;border:1px solid rgba(231,201,141,.12);border-radius:50%}.orbit:before{inset:10%}.orbit:after{inset:22%}
+.core{width:34%;aspect-ratio:1;border-radius:50%;display:grid;place-items:center;text-align:center;background:radial-gradient(circle,#393247,#171724 68%,#0d0e17);border:1px solid rgba(231,201,141,.35);box-shadow:0 0 50px #d99aaa20;z-index:1;padding:10px}
+.core small{font-size:9px;letter-spacing:.2em;color:var(--gold);display:block}.core strong{font-size:clamp(15px,3.5vw,20px);font-weight:normal;font-style:italic;display:block;margin-top:7px}
+.node{position:absolute;z-index:2;width:112px;min-height:72px;border:1px solid #e7c98d55;background:#0e0f19f2;color:var(--ink);border-radius:60px;padding:12px 8px;cursor:pointer;transition:.25s;box-shadow:0 8px 30px #0005}
+.node:hover,.node:focus-visible{border-color:var(--gold);transform:scale(1.06);outline:none}.node small{display:block;font-size:9px;letter-spacing:.1em;color:var(--gold);margin-bottom:5px}.node span{font-size:13px;font-style:italic}
+.n1{top:1%;left:50%;transform:translateX(-50%)}.n1:hover{transform:translateX(-50%) scale(1.06)}.n2{right:-2%;top:31%}.n3{right:12%;bottom:2%}.n4{left:12%;bottom:2%}.n5{left:-2%;top:31%}
+.progress{text-align:center;color:var(--muted);font-size:10px;letter-spacing:.16em;text-transform:uppercase}.progress b{color:var(--gold);font-weight:normal}
+.panel{display:none;margin:26px auto 0;max-width:590px;padding:28px 25px;border:1px solid var(--line);background:linear-gradient(145deg,#231f2ee0,#0d0e17f0);box-shadow:0 20px 70px #0005;animation:rise .45s ease}.panel.show{display:block}
+@keyframes rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.eyebrow{font-size:10px;letter-spacing:.2em;color:var(--gold);text-transform:uppercase}.panel h2{font-size:30px;font-weight:normal;font-style:italic;margin:12px 0 16px}.panel p{font-size:16px;line-height:1.95;color:#e0d9d3;margin:0}
+.close{display:block;margin:22px auto 0;background:none;border:0;color:var(--gold);font-size:10px;letter-spacing:.16em;text-transform:uppercase;cursor:pointer;padding:10px}
+.final{display:none;text-align:center;margin:36px auto 0;max-width:610px;padding:30px 24px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);animation:rise .8s ease}.final.show{display:block}
+.tiny{font-size:10px;letter-spacing:.2em;color:var(--gold);text-transform:uppercase}.final h2{font-size:clamp(29px,6vw,43px);font-weight:normal;line-height:1.25;margin:20px 0;color:var(--rose);font-style:italic}.final p{font-size:16px;line-height:2;color:#e4ddd6}.final .dua{color:var(--gold);font-style:italic}.signature{font-size:24px!important;color:var(--ink);margin-top:25px!important}
+.restart{display:none;margin:24px auto 0;padding:12px 20px;border:1px solid var(--line);border-radius:30px;background:transparent;color:var(--muted);font-size:10px;letter-spacing:.16em;cursor:pointer}.restart.show{display:block}
+footer{text-align:center;color:#777482;font-size:10px;letter-spacing:.12em;margin-top:42px}
+@media(max-width:420px){.node{width:96px;min-height:65px}.n2{right:-3%}.n5{left:-3%}.panel{padding:24px 19px}.intro{font-size:16px}}
+</style></head><body><main class="wrap">
+<div class="top">A private little universe · made by Muhammad</div>
+<h1>The Place<br><span>Between Two Duas</span></h1>
+<p class="sub">For my Sarauniya — a world with no map, because it was never meant for anyone else.</p><div class="rule"></div>
+<p class="intro">Some things are too meaningful to fit inside one message.<br>So I made you a small universe. <em>Tap each little world</em> and take your time.</p>
+<section class="orbit" aria-label="Five little worlds to explore">
+<div class="core"><div><small>MY FAVOURITE</small><strong>kind of<br>forever</strong></div></div>
+<button class="node n1" data-id="0"><small>01 · THE BEGINNING</small><span>How it started</span></button>
+<button class="node n2" data-id="1"><small>02 · THE EVERYDAY</small><span>Little things</span></button>
+<button class="node n3" data-id="2"><small>03 · THE PRAYER</small><span>What I ask for</span></button>
+<button class="node n4" data-id="3"><small>04 · THE DREAM</small><span>One day, in shaa Allah</span></button>
+<button class="node n5" data-id="4"><small>05 · THE PROMISE</small><span>What I choose</span></button></section>
+<div class="progress"><b id="count">0</b> of 5 little worlds discovered</div>
+<section class="panel" id="panel" aria-live="polite"><div class="eyebrow" id="eyebrow"></div><h2 id="heading"></h2><p id="copy"></p><button class="close" id="close">Close this little world ✦</button></section>
+<section class="final" id="final"><div class="tiny">You found every little world</div><h2>And somehow,<br>they all lead back to you.</h2>
+<p>I don't know every detail of what tomorrow will look like. But I know the kind of tomorrow I keep making dua for: one with peace in our hearts, kindness in our words, laughter in our home, and Allah at the centre of it all.</p>
+<p class="dua">May Allah protect you, keep your heart at ease, bless every step you take, and write what is best and most beautiful for us. Ameen.</p>
+<p>Until then, never doubt that you are appreciated, prayed for, and loved with a sincerity I am still learning how to put into words.</p><p class="signature">With all my heart,<br>Muhammad 💜</p></section>
+<button class="restart" id="restart">EXPLORE AGAIN</button><footer>NOT A PLACE ON ANY MAP · JUST A LITTLE PLACE IN MY HEART</footer>
+</main>
+<script>
+const worlds=[
+{tag:"01 · THE BEGINNING",title:"A beginning I didn't plan",copy:"I can't point to one perfect second and say, “That was when you became important to me.” It happened in the little moments — a conversation, a laugh, the way an ordinary day could suddenly feel lighter. And somewhere along the way, you became someone I wanted to be more intentional with. Not just someone to talk to, but someone to treat with care."},
+{tag:"02 · THE EVERYDAY",title:"The ordinary is my favourite dream",copy:"I think about the small things more than the grand ones. Asking how your day went. Saving you the last bite. Helping out in the kitchen. Laughing over something that would make no sense to anybody else. Making room for your tired days, your quiet moments, your big dreams. I don't need every day to be extraordinary. I want us to make the ordinary feel safe and beautiful."},
+{tag:"03 · THE PRAYER",title:"The part only Allah can write",copy:"There are things I cannot promise because they belong to the unseen. But I can ask Allah for them. I ask Him to guard your heart, grant you good health, open doors for you, forgive your shortcomings, and give you a life filled with barakah. And when I ask for a future together, I ask for one that brings us closer to Him — not further away."},
+{tag:"04 · THE DREAM",title:"A home made of little mercies",copy:"One day, in shaa Allah, may our home be a place where salah is never treated as an interruption, where apologies come without pride, where we can be silly and serious, where we help each other without keeping score. A home with warm food, honest conversations, patience on difficult days, and gratitude on the easy ones. A home that feels like sakinah."},
+{tag:"05 · THE PROMISE",title:"To keep choosing what is good",copy:"I won't pretend to be a perfect man. I am still growing, learning, correcting myself and asking Allah to make me better. But I want my love to show in my character: in respect, honesty, patience, loyalty, and the effort I make when nobody is watching. I want to be someone whose presence brings you peace — and whose actions make his words mean something."}
+];
+const seen=new Set(),panel=document.getElementById('panel'),finalBox=document.getElementById('final');
+document.querySelectorAll('.node').forEach(btn=>btn.addEventListener('click',()=>{const item=worlds[Number(btn.dataset.id)];seen.add(Number(btn.dataset.id));document.getElementById('count').textContent=seen.size;document.getElementById('eyebrow').textContent=item.tag;document.getElementById('heading').textContent=item.title;document.getElementById('copy').textContent=item.copy;panel.classList.remove('show');void panel.offsetWidth;panel.classList.add('show');panel.scrollIntoView({behavior:'smooth',block:'nearest'});if(seen.size===5){finalBox.classList.add('show');document.getElementById('restart').classList.add('show')}}));
+document.getElementById('close').addEventListener('click',()=>panel.classList.remove('show'));
+document.getElementById('restart').addEventListener('click',()=>{seen.clear();document.getElementById('count').textContent='0';panel.classList.remove('show');finalBox.classList.remove('show');document.getElementById('restart').classList.remove('show');window.scrollTo({top:0,behavior:'smooth'})});
+</script></body></html>
